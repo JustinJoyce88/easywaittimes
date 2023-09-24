@@ -37,7 +37,7 @@ export default allParks = [
         id: 64,
         color: '#cea24a',
         imageUri: require('../assets/IslandsOfAdventure.jpg'),
-      }
+      },
     ],
   },
 ];

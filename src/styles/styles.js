@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
   container: {
@@ -14,6 +14,7 @@ export const globalStyles = StyleSheet.create({
     margin: 5,
   },
   parkTitle: {
+    fontFamily: 'Cochin',
     flex: 1,
     fontSize: 18,
     textAlign: 'center',
@@ -26,5 +27,33 @@ export const globalStyles = StyleSheet.create({
     borderBottomRightRadius: 5,
     padding: 10,
     overflow: 'hidden',
+  },
+  landButton: {
+    height: Dimensions.get('window').height / 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  landText: {
+    fontSize: 28,
+    fontFamily: 'Cochin',
+  },
+  rideContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  rideName: { height: 80, width: '70%', justifyContent: 'center', paddingLeft: 10 },
+  rideNameText: {
+    fontSize: 18,
+    textAlignVertical: 'center',
+    fontFamily: 'Cochin',
+  },
+  rideTime: {
+    height: 80,
+    justifyContent: 'center',
+  },
+  rideTimeText: {
+    fontSize: 24,
+    textAlignVertical: 'center',
+    fontFamily: 'Cochin',
   },
 });

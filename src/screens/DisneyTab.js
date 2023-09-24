@@ -1,14 +1,21 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
+
+import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+import QueueTimesCredit from '../components/QueueTimesCredit';
 import allParks from '../data/allParks';
 import { globalStyles } from '../styles/styles';
 
-const DisneyTab = () => {
+const DisneyTab = (props) => {
+  const { navigation } = props;
   const disneyParks = allParks.find((item) => item.name === 'Walt Disney World');
 
   renderItem = ({ item }) => {
     return (
-      <TouchableOpacity style={[globalStyles.parkItem, { backgroundColor: item.color }]}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Wait Times', { park: item })}
+        style={[globalStyles.parkItem, { backgroundColor: item.color }]}
+      >
         <Text style={globalStyles.parkTitle}>{item.name}</Text>
         <Image
           style={globalStyles.parkImage}
@@ -30,6 +37,7 @@ const DisneyTab = () => {
         renderItem={(item) => renderItem(item)}
         keyExtractor={(item) => item.id}
       />
+      <QueueTimesCredit />
     </View>
   );
 };
